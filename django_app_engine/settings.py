@@ -79,8 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'polls',
-        'USER': 'your-datebase-user>',
-        'PASSWORD': '<your-database-password>',
+        'USER': 'root',
+        'PASSWORD': 'racecar144755',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 # In the flexible environment, you connect to CloudSQL using a unix socket.

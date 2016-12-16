@@ -1,6 +1,7 @@
 from django.urls import reverse
 from django.views import generic
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 
@@ -10,13 +11,16 @@ from polls.models import Choice
 
 # Create your views here.
 
-class IndexView(generic.ListView):
-    template_name = 'polls/index.html'
-    context_object_name = 'latest_question_list'
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
 
-    def get_queryset(self):
-        """Return the last fine published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
+# class IndexView(generic.ListView):
+#     template_name = 'polls/index.html'
+#     context_object_name = 'latest_question_list'
+#
+#     def get_queryset(self):
+#         """Return the last fine published questions."""
+#         return Question.objects.order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
